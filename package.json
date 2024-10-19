@@ -1,5 +1,8 @@
 {
-  "name": "shu-ui",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@sashkhen"
+  },
+  "name": "@sashkhen/shu-ui",
   "version": "1.0.0",
   "type": "module",
   "main": "dist/index.cjs.js",
