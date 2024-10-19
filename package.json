@@ -1,9 +1,10 @@
 {
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@sashkhen"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sashkhen/shu-ui.git"
   },
   "name": "@sashkhen/shu-ui",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -33,7 +34,7 @@
   ],
   "author": "sashkhen056@gmail.com",
   "license": "ISC",
-  "description": "",
+  "description": "UI kit to be used in various projects",
   "devDependencies": {
     "@chromatic-com/storybook": "^1.9.0",
     "@storybook/addon-essentials": "^8.3.6",
