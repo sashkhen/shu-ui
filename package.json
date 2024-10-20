@@ -4,7 +4,7 @@
     "url": "git+https://github.com/sashkhen/shu-ui.git"
   },
   "name": "@sashkhen/shu-ui",
-  "version": "1.0.5",
+  "version": "1.0.8",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
