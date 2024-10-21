@@ -1,5 +1,7 @@
 import React, { MouseEventHandler } from "react";
 
+import styles from "./Button.module.scss";
+
 export type ButtonProps = {
   text?: string;
   primary?: boolean;
@@ -18,6 +20,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button
+      className={styles.root}
       type="button"
       onClick={onClick}
       data-primary={primary}

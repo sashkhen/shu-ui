@@ -1,3 +1,5 @@
+import "@testing-library/jest-dom";
+
 import React from "react";
 import { describe, expect, it } from "vitest";
 
