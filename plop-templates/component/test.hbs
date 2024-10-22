@@ -1,0 +1,16 @@
+import "@testing-library/jest-dom";
+
+import React from "react";
+import { describe, expect, it } from "vitest";
+
+import { render, screen } from "@testing-library/react";
+
+import {{properCase name}} from "../{{properCase name}}";
+
+describe("{{properCase name}} component", () => {
+  it("{{properCase name}} should render correctly", () => {
+    render(<{{properCase name}} />);
+    const el = screen.getByTestId("{{properCase name}}");
+    expect(el).toBeInTheDocument();
+  });
+});
