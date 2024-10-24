@@ -82,5 +82,9 @@
       "npm run lint",
       "npm run test"
     ]
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "normalize.css": "^8.0.1"
   }
 }

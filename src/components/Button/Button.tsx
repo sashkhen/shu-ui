@@ -1,35 +1,52 @@
-import React, { MouseEventHandler } from "react";
+import clsx from "clsx";
+import React from "react";
 
 import styles from "./Button.module.scss";
 
-export type ButtonProps = {
-  text?: string;
+type BaseProps = Omit<
+  React.DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  >,
+  // "data-testid" | "ref"
+  "ref"
+>;
+
+export type ButtonProps = BaseProps & {
   primary?: boolean;
-  disabled?: boolean;
+  danger?: boolean;
   size?: "small" | "medium" | "large";
-  onClick?: MouseEventHandler<HTMLButtonElement>;
+  loading?: boolean; // todo: implement loader; replace children with loader
+  // icon?: ReactNode;
+  // iconPosition?: 'start' | 'end';
+  variant?: "solid" | "filled" | "outlined" | "text" | "link";
+  shape?: "default" | "circle" | "round"; // ??
+  block?: boolean;
 };
 
 const Button: React.FC<ButtonProps> = ({
-  size,
+  size = "medium",
   primary,
+  danger,
   disabled,
-  text,
-  onClick,
+  block,
+  shape = "default",
+  variant = "solid",
+  className,
   ...props
 }) => {
   return (
     <button
-      className={styles.root}
       type="button"
-      onClick={onClick}
-      data-primary={primary}
+      data-testid="Button"
+      className={clsx(styles.root, block && styles.block, className)}
       disabled={disabled}
+      data-color={danger ? "danger" : primary ? "primary" : "default"}
       data-size={size}
+      data-shape={shape}
+      data-variant={variant}
       {...props}
-    >
-      {text}
-    </button>
+    />
   );
 };
 
