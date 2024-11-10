@@ -3,13 +3,6 @@ import React from "react";
 
 import { Loader } from "../Loader";
 import styles from "./Button.module.scss";
-import theme from "./Theme.module.scss";
-
-/**
- * todo:
- * - check icon/position
- * - clean up stories
- */
 
 type BaseProps = Omit<
   React.DetailedHTMLProps<
@@ -20,14 +13,15 @@ type BaseProps = Omit<
 >;
 
 export type ButtonProps = BaseProps & {
+  variant?: "solid" | "filled" | "outlined" | "text" | "link";
   size?: "small" | "medium" | "large";
-  loading?: boolean; // todo: implement loader; replace children with loader
+  shape?: "default" | "circle" | "round";
+  raised?: boolean;
+  loading?: boolean;
+  disabled?: boolean;
+  block?: boolean;
   // icon?: ReactNode;
   // iconPosition?: 'start' | 'end';
-  variant?: "solid" | "filled" | "outlined" | "text" | "link";
-  raised?: boolean;
-  shape?: "default" | "circle" | "round"; // ??
-  block?: boolean;
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -46,14 +40,14 @@ const Button: React.FC<ButtonProps> = ({
     <button
       type="button"
       data-testid="Button"
-      className={clsx(styles.root, theme.vars, className)}
+      className={clsx(styles.root, className)}
       disabled={disabled}
+      data-shu-variant={variant}
       data-shu-size={size}
       data-shu-shape={shape}
-      data-shu-variant={variant}
       data-shu-raised={raised}
-      data-shu-block={block}
       data-shu-loading={loading}
+      data-shu-block={block}
       {...props}
     >
       {loading ? <Loader size="small" className={styles.loader} /> : null}

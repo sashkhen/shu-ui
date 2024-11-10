@@ -2,7 +2,6 @@ import clsx from "clsx";
 import React from "react";
 
 import styles from "./Loader.module.scss";
-import theme from "./Theme.module.scss";
 
 type BaseProps = Omit<
   React.DetailedHTMLProps<
@@ -26,7 +25,7 @@ const Loader: React.FC<LoaderProps> = ({
   return (
     <span
       data-testid="Loader"
-      className={clsx(styles.root, theme.vars, className)}
+      className={clsx(styles.root, className)}
       data-shu-size={size}
       data-shu-block={block}
       {...props}

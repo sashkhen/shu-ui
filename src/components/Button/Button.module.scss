@@ -1,8 +1,11 @@
 @use "../../styles/index";
 @use "../../styles/button";
 @use "../../styles/mixins";
+@use "./theme";
 
 .root {
+  @include theme.btn-vars;
+
   position: relative;
   display: inline-flex;
   flex-direction: row;

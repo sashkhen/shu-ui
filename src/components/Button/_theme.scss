@@ -1,31 +1,37 @@
-.vars {
-  // colors
+@mixin btn-color-vars {
   --shu-btn-text-color: var(--shu-theme-btn-text-color, #fff);
   --shu-btn-color-default: var(--shu-theme-btn-color-default, #fff);
   --shu-btn-color: var(
     --shu-theme-btn-color,
     hsl(
-      var(--shu-theme-primary-color-h) var(--shu-theme-primary-color-s)
-        var(--shu-theme-primary-color-l)
+      var(--shu-theme-primary-color-h, 92) var(--shu-theme-primary-color-s, 45%)
+        var(--shu-theme-primary-color-l, 32%)
     )
   );
   --shu-btn-color-hover: var(
     --shu-theme-btn-color-hover,
     hsl(
-      var(--shu-theme-primary-color-h) var(--shu-theme-primary-color-s)
-        calc(var(--shu-theme-primary-color-l) + 10%)
+      var(--shu-theme-primary-color-h, 92) var(--shu-theme-primary-color-s, 45%)
+        calc(var(--shu-theme-primary-color-l, 32%) + 10%)
     )
   );
   --shu-btn-color-light: var(
     --shu-theme-btn-color-light,
-    hsl(var(--shu-theme-primary-color-h) var(--shu-theme-primary-color-s) 90%)
+    hsl(
+      var(--shu-theme-primary-color-h, 92) var(--shu-theme-primary-color-s, 45%)
+        90%
+    )
   );
   --shu-btn-color-light-hover: var(
     --shu-theme-btn-color-light-hover,
-    hsl(var(--shu-theme-primary-color-h) var(--shu-theme-primary-color-s) 85%)
+    hsl(
+      var(--shu-theme-primary-color-h, 92) var(--shu-theme-primary-color-s, 45%)
+        85%
+    )
   );
+}
 
-  // disabled
+@mixin btn-disabled-vars {
   --shu-btn-text-color-disabled: var(--shu-theme-btn-text-color-disabled, #fff);
   --shu-btn-color-default-disabled: var(
     --shu-theme-btn-color-default-disabled,
@@ -34,41 +40,55 @@
   --shu-btn-color-disabled: var(
     --shu-theme-btn-color-disabled,
     hsl(
-      var(--shu-theme-disabled-color-h) var(--shu-theme-disabled-color-s)
-        var(--shu-theme-disabled-color-l)
+      var(--shu-theme-disabled-color-h, 210)
+        var(--shu-theme-disabled-color-s, 16%)
+        var(--shu-theme-disabled-color-l, 87%)
     )
   );
+}
 
-  // box-shadow
+@mixin btn-box-shadow-vars {
   --shu-btn-box-shadow: var(
     --shu-theme-btn-box-shadow,
     0 0.125rem 0.5rem 0
       hsla(
-        var(--shu-theme-primary-color-h),
-        var(--shu-theme-primary-color-s),
-        var(--shu-theme-primary-color-l),
+        var(--shu-theme-primary-color-h, 92),
+        var(--shu-theme-primary-color-s, 45%),
+        var(--shu-theme-primary-color-l, 32%),
         0.1
       )
   );
+}
 
-  // spacing
+@mixin btn-spacing-vars {
   --shu-btn-padding-x-sm: var(--shu-theme-btn-padding-x-sm, 0.75rem);
   --shu-btn-padding-y-sm: var(--shu-theme-btn-padding-y-sm, 0.25rem);
   --shu-btn-padding-x-md: var(--shu-theme-btn-padding-x-md, 1rem);
   --shu-btn-padding-y-md: var(--shu-theme-btn-padding-y-md, 0.5rem);
   --shu-btn-padding-x-lg: var(--shu-theme-btn-padding-x-lg, 1.25rem);
   --shu-btn-padding-y-lg: var(--shu-theme-btn-padding-y-lg, 0.6875rem);
+}
 
-  // border-radius
+@mixin btn-border-vars {
   --shu-btn-br-sm: var(--shu-theme-btn-br-sm, 0.25rem);
   --shu-btn-br-sm-round: var(--shu-theme-btn-br-sm-round, 1.5rem);
   --shu-btn-br-md: var(--shu-theme-btn-br-md, 0.375rem);
   --shu-btn-br-md-round: var(--shu-theme-btn-br-md-round, 2rem);
   --shu-btn-br-lg: var(--shu-theme-btn-br-lg, 0.5rem);
   --shu-btn-br-lg-round: var(--shu-theme-btn-br-lg-round, 2.5rem);
+}
 
-  // font
+@mixin btn-font-vars {
   --shu-btn-fs-sm: var(--shu-theme-btn-fs-sm, 0.875rem);
   --shu-btn-fs-md: var(--shu-theme-btn-fs-md, 0.875rem);
   --shu-btn-fs-lg: var(--shu-theme-btn-fs-lg, 1rem);
+}
+
+@mixin btn-vars {
+  @include btn-color-vars;
+  @include btn-disabled-vars;
+  @include btn-box-shadow-vars;
+  @include btn-spacing-vars;
+  @include btn-border-vars;
+  @include btn-font-vars;
 }

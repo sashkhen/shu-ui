@@ -23,11 +23,12 @@ import { Button } from "shu-ui";
 const Example = () => {
   return (
     <Button
-      size={"small"}
-      text={"Button"}
+      variant="solid"
+      size="medium"
       onClick={() => console.log("Clicked")}
-      primary
-    />
+    >
+      Button
+    </Button>
   );
 };
 

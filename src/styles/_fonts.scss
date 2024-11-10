@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
 
 :root {
-  --ff-primary: "Inconsolata", monospace;
-  --ff-secondary: "Karla", sans-serif;
+  // --ff-primary: "Inconsolata", monospace;
+  // --ff-secondary: "Karla", sans-serif;
 
   --fw-thin: 100;
   --fw-extra-light: 200;
@@ -17,7 +17,8 @@
 }
 
 body {
-  font-family: var(--ff-primary);
+  // font-family: var(--ff-primary);
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-optical-sizing: auto;
   font-weight: var(--fw-regular);
   font-style: normal;

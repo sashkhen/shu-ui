@@ -1,7 +1,10 @@
 @use "../../styles/index";
 @use "../../styles/loader";
+@use "./theme";
 
 .root {
+  @include theme.loader-vars;
+
   display: inline-flex;
   justify-content: center;
   align-items: center;
