@@ -1,12 +1,18 @@
+import clsx from "clsx";
 import React from "react";
 
 import styles from "./{{properCase name}}.module.scss";
 
-export type {{properCase name}}Props = {};
+type BaseProps = Omit<
+  React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
+  "data-testid" | "ref"
+>;
 
-const {{properCase name}}: React.FC<{{properCase name}}Props> = ({ ...props }) => {
+export type {{properCase name}}Props = BaseProps & {};
+
+const {{properCase name}}: React.FC<{{properCase name}}Props> = ({ className, ...props }) => {
   return (
-    <div className={styles.root} data-testid="{{properCase name}}" {...props}>
+    <div data-testid="{{properCase name}}" className={clsx(styles.root, className)} {...props}>
       {JSON.stringify(props)}
     </div>
   );

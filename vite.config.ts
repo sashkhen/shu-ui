@@ -8,6 +8,12 @@ import { libInjectCss } from "vite-plugin-lib-inject-css";
 
 import { name, peerDependencies } from "./package.json";
 
+const kebabize = (str: string) =>
+  str.replace(
+    /[A-Z]+(?![a-z])|[A-Z]/g,
+    ($, ofs) => (ofs ? "-" : "") + $.toLowerCase(),
+  );
+
 export default defineConfig({
   build: {
     lib: {
@@ -48,6 +54,21 @@ export default defineConfig({
     setupFiles: "./setupTests.ts",
   },
   css: {
+    modules: {
+      // generateScopedName: isProduction
+      //   ? "[hash:base64:5]"
+      //   : "[folder]__[local]__[hash:base64:5]",
+      generateScopedName: (name: string, filename: string) => {
+        const folderName = filename.split("/").reverse()[1];
+        const className = kebabize(name)
+          .replace(/^root$/, "")
+          .trim();
+
+        return [`shu-${kebabize(folderName)}`, className]
+          .filter(Boolean)
+          .join("__");
+      },
+    },
     preprocessorOptions: {
       scss: {
         api: "modern-compiler", // or "modern"

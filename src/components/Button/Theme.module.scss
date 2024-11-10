@@ -1,0 +1,74 @@
+.vars {
+  // colors
+  --shu-btn-text-color: var(--shu-theme-btn-text-color, #fff);
+  --shu-btn-color-default: var(--shu-theme-btn-color-default, #fff);
+  --shu-btn-color: var(
+    --shu-theme-btn-color,
+    hsl(
+      var(--shu-theme-primary-color-h) var(--shu-theme-primary-color-s)
+        var(--shu-theme-primary-color-l)
+    )
+  );
+  --shu-btn-color-hover: var(
+    --shu-theme-btn-color-hover,
+    hsl(
+      var(--shu-theme-primary-color-h) var(--shu-theme-primary-color-s)
+        calc(var(--shu-theme-primary-color-l) + 10%)
+    )
+  );
+  --shu-btn-color-light: var(
+    --shu-theme-btn-color-light,
+    hsl(var(--shu-theme-primary-color-h) var(--shu-theme-primary-color-s) 90%)
+  );
+  --shu-btn-color-light-hover: var(
+    --shu-theme-btn-color-light-hover,
+    hsl(var(--shu-theme-primary-color-h) var(--shu-theme-primary-color-s) 85%)
+  );
+
+  // disabled
+  --shu-btn-text-color-disabled: var(--shu-theme-btn-text-color-disabled, #fff);
+  --shu-btn-color-default-disabled: var(
+    --shu-theme-btn-color-default-disabled,
+    #fff
+  );
+  --shu-btn-color-disabled: var(
+    --shu-theme-btn-color-disabled,
+    hsl(
+      var(--shu-theme-disabled-color-h) var(--shu-theme-disabled-color-s)
+        var(--shu-theme-disabled-color-l)
+    )
+  );
+
+  // box-shadow
+  --shu-btn-box-shadow: var(
+    --shu-theme-btn-box-shadow,
+    0 0.125rem 0.5rem 0
+      hsla(
+        var(--shu-theme-primary-color-h),
+        var(--shu-theme-primary-color-s),
+        var(--shu-theme-primary-color-l),
+        0.1
+      )
+  );
+
+  // spacing
+  --shu-btn-padding-x-sm: var(--shu-theme-btn-padding-x-sm, 0.75rem);
+  --shu-btn-padding-y-sm: var(--shu-theme-btn-padding-y-sm, 0.25rem);
+  --shu-btn-padding-x-md: var(--shu-theme-btn-padding-x-md, 1rem);
+  --shu-btn-padding-y-md: var(--shu-theme-btn-padding-y-md, 0.5rem);
+  --shu-btn-padding-x-lg: var(--shu-theme-btn-padding-x-lg, 1.25rem);
+  --shu-btn-padding-y-lg: var(--shu-theme-btn-padding-y-lg, 0.6875rem);
+
+  // border-radius
+  --shu-btn-br-sm: var(--shu-theme-btn-br-sm, 0.25rem);
+  --shu-btn-br-sm-round: var(--shu-theme-btn-br-sm-round, 1.5rem);
+  --shu-btn-br-md: var(--shu-theme-btn-br-md, 0.375rem);
+  --shu-btn-br-md-round: var(--shu-theme-btn-br-md-round, 2rem);
+  --shu-btn-br-lg: var(--shu-theme-btn-br-lg, 0.5rem);
+  --shu-btn-br-lg-round: var(--shu-theme-btn-br-lg-round, 2.5rem);
+
+  // font
+  --shu-btn-fs-sm: var(--shu-theme-btn-fs-sm, 0.875rem);
+  --shu-btn-fs-md: var(--shu-theme-btn-fs-md, 0.875rem);
+  --shu-btn-fs-lg: var(--shu-theme-btn-fs-lg, 1rem);
+}

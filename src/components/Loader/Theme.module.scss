@@ -1,0 +1,18 @@
+.vars {
+  // color
+  --shu-loader-color: var(
+    --shu-theme-loader-color,
+    hsl(
+      var(--shu-theme-primary-color-h) var(--shu-theme-primary-color-s)
+        var(--shu-theme-primary-color-l)
+    )
+  );
+
+  // size
+  --shu-loader-size-sm: var(--shu-theme-loader-size-sm, 0.25rem);
+  --shu-loader-size-md: var(--shu-theme-loader-size-md, 0.5rem);
+  --shu-loader-size-lg: var(--shu-theme-loader-size-lg, 1rem);
+
+  // duration
+  --shu-loader-duration: var(--shu-theme-loader-duration, 0.45s);
+}

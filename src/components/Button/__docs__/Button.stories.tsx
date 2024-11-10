@@ -9,22 +9,38 @@ const meta: Meta<typeof Example> = {
 export default meta;
 type Story = StoryObj<typeof Example>;
 
-export const Primary: Story = {
+export const Default: Story = {
+  args: {},
+};
+
+export const Raised: Story = {
   args: {
-    children: "Primary",
-    primary: true,
-    disabled: false,
-    size: "small",
-    onClick: () => console.log("Button"),
+    raised: true,
   },
 };
 
-export const Secondary: Story = {
+export const Disabled: Story = {
   args: {
-    children: "Secondary",
-    primary: false,
-    disabled: false,
-    size: "small",
-    onClick: () => console.log("Button"),
+    raised: true,
+    disabled: true,
+  },
+};
+
+export const Rounded: Story = {
+  args: {
+    shape: "round",
+  },
+};
+
+export const Circle: Story = {
+  args: {
+    shape: "circle",
+    children: "++",
+  },
+};
+
+export const Loading: Story = {
+  args: {
+    loading: true,
   },
 };
