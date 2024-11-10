@@ -4,6 +4,7 @@
     "url": "git+https://github.com/sashkhen/shu-ui.git"
   },
   "name": "@sashkhen/shu-ui",
+  "homepage": "https://sashkhen.github.io/shu-ui",
   "version": "1.0.8",
   "type": "module",
   "main": "dist/index.cjs.js",
@@ -19,11 +20,13 @@
     "test": "vitest run",
     "test-watch": "vitest",
     "test:ui": "vitest --ui",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
     "prepare": "npm run build",
     "generate": "plop",
-    "generate:component": "npm run generate component"
+    "generate:component": "npm run generate component",
+    "storybook": "storybook dev -p 6006",
+    "storybook:build": "storybook build --output-dir storybook",
+    "predeploy": "npm run storybook:build",
+    "deploy": "gh-pages -d storybook"
   },
   "keywords": [
     "ui-library",
@@ -58,6 +61,7 @@
     "eslint-plugin-react": "^7.37.1",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-storybook": "^0.9.0",
+    "gh-pages": "^6.2.0",
     "glob": "^7.2.3",
     "husky": "^9.1.6",
     "jsdom": "^25.0.1",

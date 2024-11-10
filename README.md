@@ -7,7 +7,7 @@
 
 > UI kit to be used in various projects
 
-### 🏠 [Homepage](https://github.com/sashkhen/shu-ui#readme)
+### 🏠 [Homepage](https://sashkhen.github.io/shu-ui/)
 
 ## Install
 
